@@ -21,6 +21,10 @@ func main() {
 	r.DELETE("/gorm/users/:id", controllers.DeleteUserGORM)
 
 	// SQL
-	
+	r.GET("/sql/users", controllers.GetUsersSQL)
+	r.POST("/sql/users", controllers.CreateUserSQL)
+	r.PUT("/sql/users/:id", controllers.UpdateUserSQL)
+	r.DELETE("/sql/users/:id", controllers.DeleteUserSQL)
+
 	r.Run()
 }
