@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/aloneen/assign2-ex3/initializers"
-	"github.com/gin-gonic/gin"
+	"github.com/aloneen/assign2-ex3/models"
 )
 
 func init() {
@@ -11,9 +11,5 @@ func init() {
 }
 
 func main() {
-	r := gin.Default()
-
-	r.GET("/", func(c *gin.Context) {})
-
-	r.Run()
+	initializers.DB.AutoMigrate(&models.User{})
 }
